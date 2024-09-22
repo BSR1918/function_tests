@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 70%;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%; /* Ensure photos takes full width of pixels */
+            height: 100%;
+        }
+
+        .carousel-inner img {
+            width: 500px;
+            height: 100%;
+            display: block; /* Change to block */
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            font-size: 30px;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <img src=photos/photo1.png alt="Image 1" class="active">
+            <img src="https://images.squarespace-cdn.com/content/v1/5936ef458419c27222778ce0/1502369580940-F3O0ZQKA2VBI7GSNJ2UK/Range.jpg?format=2500w" alt="Image 2">
+            <img src="https://images.squarespace-cdn.com/content/v1/5936ef458419c27222778ce0/1498835698867-49QDPMATE2YJE5LZMFK8/Picture+36.png?format=500w" alt="Image 3">
+            <img src="https://images.squarespace-cdn.com/content/v1/5936ef458419c27222778ce0/1498835765114-GCP0UGH44HDMTPAYD3TZ/ipds.jpg?format=500w" alt="Image 4">
+            <img src="https://images.squarespace-cdn.com/content/v1/5936ef458419c27222778ce0/1498835622617-ISP9GO7FIX4Z0MB03LFM/20161106_081543.jpg?format=750w" alt="Image 5">
+        </div>
+        <!-- <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+        <button class="arrow right" onclick="nextSlide()">&#10095;</button> -->
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = document.querySelectorAll('.carousel-inner img').length;
+
+        function showSlide(index) {
+            const offset = index * -100; // Move by 100% of the width for each slide
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
