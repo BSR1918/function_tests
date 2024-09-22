@@ -1,0 +1,385 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firearm's Rental List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input {
+            margin-bottom: 12px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<h2> Handgun Rental List</h2>
+<input type="text" id="searchInput" placeholder="Search for company, firearm model or cal..." onkeyup="searchTable()">
+
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Model</th>
+            <th>Caliber </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Glocks -->
+        <tr>
+            <td>Glock</td>
+            <td>17</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Glock</td>
+            <td>19</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Glock</td>
+            <td>23</td>
+            <td>.40</td>
+        </tr>
+        <tr>
+            <td>Glock</td>
+            <td>26</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Glock</td>
+            <td>36</td>
+            <td>.45</td>
+        </tr>
+        <tr>
+            <td>Glock</td>
+            <td>42</td>
+            <td>.380</td>
+        </tr>
+        <tr>
+            <td>Glock</td>
+            <td>43</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Glock</td>
+            <td>43x</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Glock</td>
+            <td>44</td>
+            <td>.22</td>
+        </tr>
+        <!-- Sig Sauer -->
+        <tr>
+            <td>Sig Sauer </td>
+            <td>P229</td>
+            <td>.40</td>
+        </tr>
+        <tr>
+            <td>Sig Sauer </td>
+            <td>P238</td>
+            <td>.380</td>
+        </tr>
+        <tr>
+            <td>Sig Sauer </td>
+            <td>P320</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Sig Sauer </td>
+            <td>P365</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Sig Sauer </td>
+            <td>P322</td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Sig Sauer </td>
+            <td>P365XL</td>
+            <td>9mm</td>
+        </tr>
+        <!-- Smith % Wesson -->
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>K Frame </td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>M&P </td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>Victory</td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>Model 617 </td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>Model 63 </td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>Model 22A-1 </td>
+            <td>.38</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>Model 10 </td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>MP9 Shield EZ</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>MP9 Shield EZ</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>Model 59</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>M&P Shield</td>
+            <td>.380</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>SD40 VE</td>
+            <td>.40</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson </td>
+            <td>M&P 45</td>
+            <td>.45</td>
+        </tr>
+        <!-- Beretta -->
+        <tr>
+            <td>Beretta</td>
+            <td>Model 92FS</td>
+            <td>9mm</td>
+        </tr>
+        <!-- Canik -->
+        <tr>
+            <td>Canik </td>
+            <td>TP9 SF Elite</td>
+            <td>9mm</td>
+        </tr>
+        <!-- H&K -->
+        <tr>
+            <td>H&K </td>
+            <td>USP</td>
+            <td>.40</td>
+        </tr>
+        <tr>
+            <td>H&K </td>
+            <td>VP9</td>
+            <td>9mm</td>
+        </tr>
+        <!-- Taurus -->
+        <tr>
+            <td>Taurus </td>
+            <td>USP</td>
+            <td>.45 / 410 GA</td>
+        </tr>
+        <!-- Ruger-->
+        <tr>
+            <td>Ruger </td>
+            <td>Mark 2</td>
+            <td>.38</td>
+        </tr>
+        <tr>
+            <td>Ruger </td>
+            <td>Mark 3</td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Ruger </td>
+            <td>LCR</td>
+            <td>.38</td>
+        </tr>
+        <tr>
+            <td>Ruger </td>
+            <td>SR22</td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Ruger </td>
+            <td>Super Blackhawk </td>
+            <td>44 Magnum</td>
+        </tr>
+        <!-- SpringField Armory -->
+        <tr>
+            <td>Springfield Armory </td>
+            <td>1911 - A1</td>
+            <td>.45</td>
+        </tr>
+        <tr>
+            <td>Springfield Armory </td>
+            <td>XD-S</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Springfield Armory </td>
+            <td>XD-9</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Springfield Armory </td>
+            <td>XD-S</td>
+            <td>.45</td>
+        </tr>
+        <tr>
+            <td>Springfield Armory </td>
+            <td>XDM-45</td>
+            <td>.45</td>
+        </tr>
+    </tbody>
+</table>
+<!-- ////////////////////////////////////////////////////////////////LONG GUN TABLE/////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h2>Long Gun Rental List</h2>
+<input type="text" id="searchInputTwo" placeholder="Search for company, firearm model or cal..." onkeyup="searchTableTwo()">
+
+<table id="dataTableTwo">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Model</th>
+            <th>Caliber </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Glocks -->
+        <tr>
+            <td>JRC</td>
+            <td>G9</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Marlin</td>
+            <td>Model 9</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Ruger</td>
+            <td>PMC 9</td>
+            <td>9mm</td>
+        </tr>
+        <tr>
+            <td>Smith & Wesson</td>
+            <td>M&P 15-22</td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Ruger</td>
+            <td>10-22</td>
+            <td>.22</td>
+        </tr>
+        <tr>
+            <td>Anderson</td>
+            <td>AM15</td>
+            <td>2.23 / 5.56</td>
+        </tr>
+        <tr>
+            <td>Bushmaster</td>
+            <td>XM15</td>
+            <td>2.23 / 5.56</td>
+        </tr>
+        <tr>
+            <td>Mossberg</td>
+            <td>590</td>
+            <td>12G</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    function searchTable() {
+        const input = document.getElementById("searchInput");
+        const filter = input.value.toLowerCase();
+        const table = document.getElementById("dataTable");
+        const tr = table.getElementsByTagName("tr");
+    
+        for (let i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+            const tdCompany = tr[i].getElementsByTagName("td")[0];
+            const tdModel = tr[i].getElementsByTagName("td")[1];
+            const tdCal = tr[i].getElementsByTagName("td")[2];
+    
+            if (tdCompany || tdModel || tdCal) {
+                const companyText = tdCompany.textContent || tdCompany.innerText;
+                const modelText = tdModel.textContent || tdModel.innerText;
+                const calText = tdCal.textContent || tdCal.innerText;
+    
+                if (
+                    companyText.toLowerCase().indexOf(filter) > -1 ||
+                    modelText.toLowerCase().indexOf(filter) > -1 ||
+                    calText.indexOf(filter) > -1 // Check cal without converting to lower case
+                ) {
+                    tr[i].style.display = ""; // Show the row
+                } else {
+                    tr[i].style.display = "none"; // Hide the row
+                }
+            }
+        }
+    }
+
+    function searchTableTwo() {
+        const input = document.getElementById("searchInputTwo");
+        const filter = input.value.toLowerCase();
+        const table = document.getElementById("dataTableTwo");
+        const tr = table.getElementsByTagName("tr");
+    
+        for (let i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+            const tdCompany = tr[i].getElementsByTagName("td")[0];
+            const tdModel = tr[i].getElementsByTagName("td")[1];
+            const tdCal = tr[i].getElementsByTagName("td")[2];
+    
+            if (tdCompany || tdModel || tdCal) {
+                const companyText = tdCompany.textContent || tdCompany.innerText;
+                const modelText = tdModel.textContent || tdModel.innerText;
+                const calText = tdCal.textContent || tdCal.innerText;
+    
+                if (
+                    companyText.toLowerCase().indexOf(filter) > -1 ||
+                    modelText.toLowerCase().indexOf(filter) > -1 ||
+                    calText.indexOf(filter) > -1 // Check cal without converting to lower case
+                ) {
+                    tr[i].style.display = ""; // Show the row
+                } else {
+                    tr[i].style.display = "none"; // Hide the row
+                }
+            }
+        }
+    }
+    </script>
+
+</body>
+</html>
